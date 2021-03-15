@@ -48,6 +48,7 @@ export default function Home() {
        download.classList.remove('d-none');
        download.classList.add('d-block');
        
+       
        let linkDownload = success.download.replace('./public', '')
        download.setAttribute('href', linkDownload);
 
