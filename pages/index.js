@@ -25,14 +25,14 @@ export default function Home() {
     
     document.getElementById('lblNome').innerHTML = e.target.files[0].name;
 
-   const save = fetch('http://localhost:3000/api/save', { 
+   const save = fetch('/api/save', { 
       method: 'POST',
       body
     }).then(
       response => response.json() // if the response is a JSON object
    ).then(success => {
      const url = success.url;
-     fetch('http://localhost:3000/api/convert', {
+     fetch('/api/convert', {
        method: 'POST',
        headers: {
          'Content-Type': 'application/json',
