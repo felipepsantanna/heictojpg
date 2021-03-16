@@ -25,6 +25,7 @@ export default function Home() {
     
     document.getElementById('lblNome').innerHTML = e.target.files[0].name;
 
+    console.log('POST');
     const save = fetch('https://heictojpg.com.br/api/save', {
       method: 'POST',
       body
@@ -39,8 +40,11 @@ export default function Home() {
        },
        body: JSON.stringify({ url })
      }).then(
-       response => response.json() // if the response is a JSON object
-     ).then(success => {
+       response => {
+         console.log(response);
+         console.log(response.json());
+         response.json() // if the response is a JSON object
+       }).then(success => {
        
        spinner.classList.remove('d-block');
        spinner.classList.add('d-none');
