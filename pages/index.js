@@ -25,14 +25,14 @@ export default function Home() {
     
     document.getElementById('lblNome').innerHTML = e.target.files[0].name;
 
-   const save = fetch('/api/save', { 
+    const save = fetch('https://heictojpg.com.br/api/save', {
       method: 'POST',
       body
     }).then(
       response => response.json() // if the response is a JSON object
    ).then(success => {
      const url = success.url;
-     fetch('/api/convert', {
+     fetch('https://heictojpg.com.br/api/convert', {
        method: 'POST',
        headers: {
          'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export default function Home() {
        
        download.classList.remove('d-none');
        download.classList.add('d-block');
-       
+
        
        let linkDownload = success.download.replace('./public', '')
        download.setAttribute('href', linkDownload);
