@@ -88,7 +88,7 @@ export default function Home() {
     </div>
           <div className="col-sm-4">
             <h1 className="display-4">Converter HEIC para JPG</h1>
-            beta
+            beta v1
             <input type="file" name="file" id="file" className="inputfile" accept=".heic" multiple="" onChange={(e) => onChange(e)}/>
 
     </div>
