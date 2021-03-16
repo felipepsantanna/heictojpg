@@ -76,7 +76,8 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Converter HEIC to JPG" />
         <meta property="og:description" content="HEIC to JPG é um conversor online totalmente gratuito desenvolvido pela Rocktools.com.br" />
-
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossOrigin="anonymous"></link>
       </Head>
 
@@ -86,7 +87,8 @@ export default function Home() {
               
     </div>
           <div className="col-sm-4">
-              <h1 className="display-4">Converter HEIC para JPG</h1>
+            <h1 className="display-4">Converter HEIC para JPG</h1>
+            beta
             <input type="file" name="file" id="file" className="inputfile" accept=".heic" multiple="" onChange={(e) => onChange(e)}/>
 
     </div>
