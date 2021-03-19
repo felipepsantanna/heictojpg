@@ -8,7 +8,7 @@ const responseHeader = 'application/json';
 
 export default async function handler(req, res) {
     const storage = new Storage({
-        keyFilename: './natural-bison-308114-315290460e89.json',
+        keyFilename: path.resolve('./natural-bison-308114-315290460e89.json'),
         projectId: 'natural-bison-308114'
     });
 
