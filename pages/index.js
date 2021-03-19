@@ -1,19 +1,12 @@
 import Head from 'next/head'
 
 
+
 export default function Home() {
 
-  const onDowload = (e) => {
-    e.preventDefault();
-    const button = e.currentTarget;
-    const url = button.getAttribute('data-download');
-  }
 
-  const onChange = (e) => upload(e);
 
-  const upload = (e) => {
-    const body = new FormData();
-    body.append('file', e.target.files[0]);
+  const onChange = async (e) => {
 
     const spinner = document.getElementById("divSpinner");
     spinner.classList.remove('d-none');
@@ -22,53 +15,51 @@ export default function Home() {
     const download = document.getElementById('btnDownload');
     download.classList.remove('d-block');
     download.classList.add('d-none');
-    
+
     document.getElementById('lblNome').innerHTML = e.target.files[0].name;
 
-    console.log('POST');
-    const save = fetch('https://heictojpg.com.br/api/save', {
+    
+    const file = e.target.files[0];
+    const filename = encodeURIComponent(file.name);
+    
+    const res = await fetch(`/api/upload-url?file=${filename}`);
+    const { url, fields } = await res.json();
+    
+    const formData = new FormData();
+
+    Object.entries({ ...fields, file }).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+    const upload = await fetch(url, {
       method: 'POST',
-      body
-    }).then(
-      response => response.json() // if the response is a JSON object
-   ).then(success => {
-     const url = success.url;
-     fetch('https://heictojpg.com.br/api/convert', {
-       method: 'POST',
-       headers: {
-         'Content-Type': 'application/json',
-       },
-       body: JSON.stringify({ url })
-     }).then(
-       response => {
-         console.log(response);
-         console.log(response.json());
-         response.json() // if the response is a JSON object
-       }).then(success => {
-       
-       spinner.classList.remove('d-block');
-       spinner.classList.add('d-none');
-       
-       download.classList.remove('d-none');
-       download.classList.add('d-block');
+      body: formData,
+    });
+   
+    if (upload.ok) {
 
-       
-       let linkDownload = success.download.replace('./public', '')
-       download.setAttribute('href', linkDownload);
+      const file = url + filename
+      const resp = await fetch(`/api/convert?file=${file}`);
+      console.log(resp);
+      const caminho = await resp.json();
+      console.log(caminho)
 
-       console.log(success);
-     } // Handle the success response object
-     ).catch(
-       error => console.log(error) // Handle the error response object
-     );
-     // Handle the success response object
-   }).catch(
-      error => console.log(error) // Handle the error response object
-   );
+      spinner.classList.remove('d-block');
+      spinner.classList.add('d-none');
+
+      download.classList.remove('d-none');
+      download.classList.add('d-block');
+
+
+      let linkDownload = caminho.url;
+      download.setAttribute('href', linkDownload);
+
+     
+    } else {
+      console.error('Upload failed.');
+    }
     
 
-    
-  };
+  }
 
   
 

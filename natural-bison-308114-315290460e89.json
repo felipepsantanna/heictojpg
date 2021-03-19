@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "natural-bison-308114",
+  "private_key_id": "315290460e89161a02b8240f6d91b0c461906019",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDsjGheuA9topQD\nPIUQtR2Rw/QRDSkCYHcpDkYGLSRkO1Y3ukvTxXlL5KIbH/3A2WJvdHTSZkVaWg/t\nWHFTqajo9goUZEQe92riNQ0DI+cPaeRBK7oyKnsDFcydNpQ797xiz5rB6J8A63QJ\n2lyghJWk2U1fs2hjzKlkeW+AEOdb9bRsqu9b/MUXC5Ft6OPXR2F4/1W6I4cn2Prj\nnD5M0bcS9Ve+CXgHxW9sj/Y35Qo0CH7FbxuW7eyyP4Iyj1kGPKFPi1uEVQDXPlG0\nnWrx5QAEnx+5HJ8gX3tJcddQ8g3vjBQd6O8F60h56gg/v/F6tJmnj+zOJA2YEP76\nxw4P+2AtAgMBAAECggEAKzbcc19rXCNdKHk0MxDvcbuLeVj+4rMGWe8EXmj9Ur1f\nWydy5mGXbwS6E7wEsuhT2ho7pFtwNJkq+ziS3Y6rb8HRJhgKNOEM+v3nnmj+85ss\nCrbnGXaWygG/w4He01THKwMT2fR6JeQd6xXkIaQPJZJYVxEy0zamxJcFxm7wIWWY\nMU6TsCXhx6Rr1ksWxPGGTpGkKCtgtYUaL60dMIEoOLHyRchv41o/lDNGVYPMkjYQ\nWJUxmZLkAsqqCZ6i/1WaOShuvFdPpsEba3XhxKmmdK7bgxNqBxN7Kwtv51RyVabv\nPP0Ll/70zuQBTVhYezLYyg3bwB6AHChLG9dgCfxwOQKBgQD4o/NWGNE8+cnHw6v2\niVygnaP7y5QXWAcjzKgD7gXIVabh/xq2Mrzik2iEH5RL8aA0GLZBFAlsm5KjaNC9\nvIaUje7rTCN9bk2MTET5WkWFMwXQNUvlkD5ziByWFMOzJLqzfA5iDbZW31uCOlts\n3cyfjYtFVWrdZduPrZVdWjzSZQKBgQDzjNTZZdxUUk0YB8ZPQmr/HnGRTeggR1k1\nuaypDRVq07uE2kJykvHE7b97GevqQfzQfXeebYWGiWKm6/vic+wUpAEo9r9vjjFj\niTE607PVMV9Rmd9Q1w7S4JM3HaEqof59gTlngJRVImT+6t7fzkO7dG8FxuEoJHkS\nGFKHsnUWKQKBgBQz1hi/yXiH30JQ/s74WENgq6tQ3kaLS4E4Jsqy81tUwkuIm9YE\nB17tlUdu/XCyQE8bVuuwwhdGCMMoSBWylMjLQ4dw101gwgJNTClqkU2CWM2TFwif\nEMP4YkI7i68po9XjlZOYA6HJYjkRns4Ys4CfUpqelyFIHm/tLb65D0oVAoGBAPCa\naIx8vLXwuIjM5XTXwKxYfwl1VaTN16vjylcXvdjTY6VTmeFmmcJavZf3e8Dpf8DY\nspuoxwiqIPOWnjiRHOEnRJ4bZfPnHZOfrSrYighLxkbvJFbQnqxlgAorE1TyxF9o\nkjVWKTQRzoSns5aWRwOheyzR1Q27OoBN1vqHqnRBAoGBANznv7jdG9QIqHGgajXo\nqhkJZyt8tjF/muF6GifeJr58n4FBcBCiTodErXlfxGD/hseU8ILjj0e0k1hJKtza\nBCfWk+l3NdKi6YQUBU3JzgepcIuRXR6z/4PCy9fi/Qk2rLbFcMEn5PLkT2IaLAWS\no2ofkBIedGL2Ey4PxqvUmz8Z\n-----END PRIVATE KEY-----\n",
+  "client_email": "conta-servico-storage@natural-bison-308114.iam.gserviceaccount.com",
+  "client_id": "108279890913490617157",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/conta-servico-storage%40natural-bison-308114.iam.gserviceaccount.com"
+}

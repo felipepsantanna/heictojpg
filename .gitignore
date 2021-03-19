@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#google cloud storage
+natural-bison-308114-315290460e89
