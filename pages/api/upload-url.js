@@ -3,7 +3,7 @@ import { Storage } from '@google-cloud/storage';
 const bucketName = 'conversor_bucket';
 const maxAgeSeconds = 3600;
 const method = ['PUT','POST', 'GET'];
-const origin = 'http://localhost:3000';
+const origin = 'https://heictojpg.com.br/';
 const responseHeader = 'application/json';
 
 export default async function handler(req, res) {
