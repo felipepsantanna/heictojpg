@@ -8,15 +8,9 @@ const responseHeader = 'application/json';
 
 export default async function handler(req, res) {
 
-    console.log(process.env.GCLOUD_CREDENTIALS)
-
-
      const storage = new Storage({
     projectId: process.env.PROJECT_ID,
-    credentials: {
-      client_email: process.env.CLIENT_EMAIL,
-      private_key: process.env.PRIVATE_KEY,
-    },
+    credentials: process.env.GCLOUD_CREDENTIALS,
   });
 
   console.log(storage);
