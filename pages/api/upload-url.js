@@ -12,6 +12,7 @@ export default async function handler(req, res) {
   Buffer.from(process.env.GCLOUD_CREDENTIALS, "base64").toString()
 );
 
+
      const storage = new Storage({
     projectId: process.env.PROJECT_ID,
     credentials: {
