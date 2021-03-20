@@ -3,7 +3,7 @@ import { Storage } from '@google-cloud/storage';
 const bucketName = 'conversor_bucket';
 const maxAgeSeconds = 3600;
 const method = ['PUT','POST', 'GET'];
-const origin = process.env.ORIGIN;
+const origin = 'http://heictojpg.com.br/';
 const responseHeader = 'application/json';
 
 export default async function handler(req, res) {
@@ -14,7 +14,7 @@ export default async function handler(req, res) {
 
 
      const storage = new Storage({
-    projectId: process.env.PROJECT_ID,
+       projectId: 'natural-bison-308114',
     credentials: {
     client_email: credential.client_email,
     private_key: credential.private_key,
