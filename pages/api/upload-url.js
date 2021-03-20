@@ -8,6 +8,8 @@ const responseHeader = 'application/json';
 
 export default async function handler(req, res) {
 
+    console.log(process.env.GCLOUD_CREDENTIALS)
+
 
      const storage = new Storage({
     projectId: process.env.PROJECT_ID,
