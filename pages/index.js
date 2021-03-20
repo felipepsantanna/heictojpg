@@ -39,9 +39,7 @@ export default function Home() {
 
       const file = url + filename
       const resp = await fetch(`/api/convert?file=${file}`);
-      console.log(resp);
       const caminho = await resp.json();
-      console.log(caminho)
 
       spinner.classList.remove('d-block');
       spinner.classList.add('d-none');

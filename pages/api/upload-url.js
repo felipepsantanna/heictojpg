@@ -3,14 +3,19 @@ import { Storage } from '@google-cloud/storage';
 const bucketName = 'conversor_bucket';
 const maxAgeSeconds = 3600;
 const method = ['PUT','POST', 'GET'];
-const origin = 'https://heictojpg.com.br/';
+const origin = process.env.ORIGIN;
 const responseHeader = 'application/json';
 
 export default async function handler(req, res) {
-    const storage = new Storage({
-        keyFilename: path.resolve('./natural-bison-308114-315290460e89.json'),
-        projectId: 'natural-bison-308114'
-    });
+
+
+     const storage = new Storage({
+    projectId: process.env.PROJECT_ID,
+    credentials: {
+      client_email: process.env.CLIENT_EMAIL,
+      private_key: process.env.PRIVATE_KEY,
+    },
+  });
 
     const bucket = storage.bucket(bucketName);
     const file = bucket.file(req.query.file);
@@ -18,8 +23,6 @@ export default async function handler(req, res) {
         expires: Date.now() + 1 * 60 * 1000, //  1 minute,
         fields: { 'x-goog-meta-test': 'data' },
     };
-
-
 
     await storage.bucket(bucketName).setCorsConfiguration([
         {
