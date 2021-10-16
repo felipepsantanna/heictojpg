@@ -116,7 +116,7 @@
 }
 
 .modal_aviso_limite_de_arquivos {
-    width: 94%;
+    width: 96%;
     display: none;
     padding: 10px;
     font-size: 0.8em;
@@ -127,7 +127,7 @@
 }
 
 .modal input {
-    width: 96%;
+    width: 65%;
     padding: 5px;
     border: 1px solid #9098A9;
     border-radius: 3px;
@@ -149,16 +149,31 @@ input:focus {
     margin-top: 20px;
 }
 
-#button_upload {
-    width: 120px;
-    padding: 6px;
-    display: inline-block;
-    background: #83eaf1;
-    border-radius: 3px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    font-weight: 800;
+#button_upload
+{
+  width: 120px;
+  padding: 6px;
+  display: block;
+  margin: 0 auto;
+  background: #83eaf1;
+  border-radius: 3px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-weight: 800;
+}
+#button_download
+{
+  width: 99px;
+  padding: 6px;
+  display: inline-block;
+  background: #41f791;
+  border-radius: 3px;
+  text-align: center;
+  color: #FFF;
+  cursor: pointer;
+  font-weight: 800;
+  margin-left: 12px;
 }
 
 #button_delete {

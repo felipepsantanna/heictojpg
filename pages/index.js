@@ -37,7 +37,7 @@ export default function Home() {
           const down = document.querySelectorAll(str)[0];
           down.setAttribute("href", `https://converter.blog.br/Converter/download/${text}`);
           down.classList.remove("none");
-          down.classList.add("block");
+
         })
         .catch((error) => {
           console.log('error: ' + error);
@@ -229,8 +229,7 @@ const Downloads = ({ download }) => {
 
   return (
     <>
-      <input type="text" name={download.name} defaultValue={download.name} readOnly />
-      <a id="button_upload" data-name={download.name} data-id={download.id} className="none">Download</a>
+      <input type="text" name={download.name} defaultValue={download.name} readOnly /> <a id="button_download" data-name={download.name} data-id={download.id} className="none">Download</a>
     </>
   )
 }
