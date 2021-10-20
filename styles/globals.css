@@ -40,7 +40,7 @@
 /*CAMPO DE UPLOAD*/
 .container {
     width: 100%;
-    min-height: 100vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -328,6 +328,10 @@ input:focus {
 
 #container_footer h2 {
     font-size: 1.3em;
+}
+
+a{
+    color: #fff;
 }
 
 

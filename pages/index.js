@@ -187,7 +187,7 @@ export default function Home() {
 
         <div id="container_footer">
           <div className="footer_rocktools">
-            <h2>Rocktools</h2>
+            <a href="https://rocktools.com.br/" rel="nofollow" target="_blank"><h2>Rocktools</h2></a>
             <p>Cresça o seu negócio on-line.
               Rocktools é uma empresa de crescimento, vamos te ajudar a escalar o seu negócio!</p>
           </div>
