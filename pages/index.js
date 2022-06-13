@@ -24,7 +24,7 @@ export default function Home() {
         method: 'GET',
       };
 
-      let requestAPI = new URL(`https://converter.blog.br/Converter/upload`);
+      let requestAPI = new URL(`https://api.rocktools.com.br/Converter/heictojpg`);
       let upload = await fetch(requestAPI, {
         method: 'POST',
         body: formData,
@@ -35,7 +35,7 @@ export default function Home() {
         .then(text => {
           const str = '[data-id="' + i + '"]';
           const down = document.querySelectorAll(str)[0];
-          down.setAttribute("href", `https://converter.blog.br/Converter/download/${text}`);
+          down.setAttribute("href", `https://api.rocktools.com.br/Converter/download/${text}`);
           down.classList.remove("none");
 
         })
@@ -179,10 +179,10 @@ export default function Home() {
 
         <div id="redes_sociais">
           <h3>Matenha-se conectado aos nossos produtos</h3>
-          <a className="" href=""><i className="fab fa-facebook contato_endereco_info_link"></i></a>
-          <a className="" href=""><i className="fab fa-instagram contato_endereco_info_link"></i></a>
-          <a className="" href=""><i className="fab fa-linkedin contato_endereco_info_link"></i></a>
-          <a className="" href=""><i className="fab fa-twitter contato_endereco_info_link"></i></a>
+          <a className="" href="https://www.facebook.com/digitalrocktools-103412471994614"><i className="fab fa-facebook contato_endereco_info_link"></i></a>
+          <a className="" href="https://www.instagram.com/digitalrocktools/"><i className="fab fa-instagram contato_endereco_info_link"></i></a>
+          <a className="" href="https://www.linkedin.com/company/digitalrocktools"><i className="fab fa-linkedin contato_endereco_info_link"></i></a>
+          <a className="" href="https://www.linkedin.com/company/digitalrocktools"><i className="fab fa-twitter contato_endereco_info_link"></i></a>
         </div>
 
         <div id="container_footer">
@@ -206,7 +206,7 @@ const Downloads = ({ download }) => {
 
   const onDownload = async (e) => {
 
-    let requestAPI = new URL(`https://converter.blog.br/Converter/download/${e.target.getAttribute("data-hash")}`);
+    let requestAPI = new URL(`https://api.rocktools.com.br/Converter/download/${e.target.getAttribute("data-hash")}`);
     let upload = await fetch(requestAPI, {
       method: 'GET',
     })
