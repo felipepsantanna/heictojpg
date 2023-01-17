@@ -1,3 +1,4 @@
+import App from 'next/app'
 import '../styles/globals.css'
 import TagManager from 'react-gtm-module'
 
