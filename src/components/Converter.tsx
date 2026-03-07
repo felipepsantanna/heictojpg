@@ -6,11 +6,11 @@ import { Upload, FileImage, Download, Loader2, X } from 'lucide-react';
 export default function Converter() {
     const [files, setFiles] = useState<{ name: string; downloadUrl: string | null; loading: boolean; id: string }[]>([]);
 
+
     const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files) return;
 
-        const selectedFiles = Array.from(e.target.files).slice(0, 5); // Aumentei para 5, mais amigável
-
+        const selectedFiles = Array.from(e.target.files).slice(0, 5);
         const newFiles = selectedFiles.map(file => ({
             id: Math.random().toString(36).substr(2, 9),
             name: file.name,
@@ -20,29 +20,50 @@ export default function Converter() {
 
         setFiles(prev => [...newFiles, ...prev]);
 
-        selectedFiles.forEach(async (file, index) => {
-            const formData = new FormData();
-            formData.append("arquivo", file);
+        selectedFiles.forEach(async (file) => {
 
             try {
-                const response = await fetch(`https://api.rocktools.com.br/Converter/heictojpg`, {
+                const response = await fetch(`https://t6z3kapvru4xqahca4nfpksni40mguoj.lambda-url.us-east-1.on.aws/heictojpg/convert?targetExtension=jpg`, {
                     method: 'POST',
-                    body: formData,
+                    headers: {
+                        'Content-Type': 'application/octet-stream',
+                        'x-api-key': process.env.NEXT_PUBLIC_API_KEY
+                    },
+                    body: file,
                 });
-                const hash = await response.text();
 
-                setFiles(prev => prev.map(item =>
-                    item.name === file.name && item.loading
-                        ? { ...item, loading: false, downloadUrl: `https://api.rocktools.com.br/Converter/download/${hash}` }
-                        : item
-                ));
+                if (!response.ok) {
+                    // Se for 401, 403, etc, tiramos o loading e avisamos o usuário
+                    setFiles(prev => prev.map(item =>
+                        item.name === file.name ? { ...item, loading: false } : item
+                    ));
+
+                    if (response.status === 401) {
+                        throw new Error("No authorized");
+                    }
+                    throw new Error("Erro na conversão.");
+                }
+
+                if (response.ok) {
+                    // IMPORTANTE: Ler como blob
+                    const imageBlob = await response.blob();
+
+                    // Criar a URL para o usuário baixar
+                    const downloadUrl = window.URL.createObjectURL(imageBlob);
+
+                    setFiles(prev => prev.map(item =>
+                        item.name === file.name
+                            ? { ...item, loading: false, downloadUrl: downloadUrl }
+                            : item
+                    ));
+                }
             } catch (error) {
+                console.error(error);
                 setFiles(prev => prev.filter(item => item.name !== file.name));
                 alert("Erro ao converter arquivo: " + file.name);
             }
         });
     };
-
     return (
         <div className="w-full max-w-xl mx-auto">
             <div className="bg-white rounded-3xl shadow-2xl shadow-blue-100 border border-slate-100 overflow-hidden">
@@ -76,9 +97,9 @@ export default function Converter() {
                                     <Loader2 size={20} className="text-blue-500 animate-spin" />
                                 ) : (
                                     <a
-                                        href={f.downloadUrl!}
-                                        className="bg-slate-900 text-white p-2 rounded-xl hover:bg-blue-600 transition-colors"
-                                        download
+                                        href={f.downloadUrl}
+                                        download={f.name.replace(".heic", ".jpg")} // Muda a extensão no nome do arquivo baixado
+                                        className="..."
                                     >
                                         <Download size={18} />
                                     </a>
