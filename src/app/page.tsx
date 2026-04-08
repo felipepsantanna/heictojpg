@@ -1,7 +1,29 @@
 import Converter from '@/components/Converter';
+import { Metadata } from "next"
 import { Instagram, Linkedin, Facebook, ArrowRight, Zap, Shield, Smile, CheckCircle2, HelpCircle } from 'lucide-react';
 import Script from 'next/script';
 import Link from 'next/link';
+
+export const metadata = {
+  title: 'Converter HEIC para JPG Online - Grátis e Ilimitado | Rocktools',
+  description: 'Converta fotos HEIC do iPhone para JPG em segundos. Ferramenta online gratuita, segura e sem perda de qualidade. Arraste e solte agora!',
+  keywords: ['HEIC para JPG', 'converter HEIC', 'foto iPhone para PC', 'formato HEIC'],
+  openGraph: {
+    title: 'Converter HEIC para JPG Online - Grátis',
+    description: 'Transforme HEIC em JPG instantaneamente.',
+    url: 'https://heictojpg.com.br',
+    siteName: 'HEICtoJPG Rocktools',
+    images: [
+      {
+        url: '/og-image.png', // Crie uma imagem de compartilhamento chamativa
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'pt_BR',
+    type: 'website',
+  },
+};
 
 export default function Home() {
     const jsonLd = {
@@ -62,10 +84,11 @@ export default function Home() {
                         <p className="font-bold text-xl tracking-tight">HEIC<span className="text-blue-600">to</span>JPG</p>
                     </div>
                     <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-                        <a href="#como-converter" className="hover:text-blue-600 transition">Como Converter</a>
-                        <a href="#faq" className="hover:text-blue-600 transition">FAQ</a>
-                        <a href="https://rocktools.com.br" target="_blank" className="hover:text-blue-600 transition">Rocktools</a>
-                    </nav>
+    <a href="#como-converter" className="hover:text-blue-600 transition">Como Converter</a>
+    <a href="#faq" className="hover:text-blue-600 transition">FAQ</a>
+    <a href="#tudo-sobre-heic" className="hover:text-blue-600 transition">Guia HEIC</a> {/* Novo Link */}
+    <a href="https://rocktools.com.br" target="_blank" className="hover:text-blue-600 transition">Rocktools</a>
+</nav>
                 </div>
             </header>
 
@@ -130,6 +153,113 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
+
+                {/* Seção de Guia de Uso e Blog Post */}
+<section id="tudo-sobre-heic" className="py-16 px-4 bg-white">
+    <div className="max-w-4xl mx-auto">
+        <div className="prose prose-slate max-w-none">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8 tracking-tight">
+                Tudo o que você precisa saber sobre arquivos HEIC
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-12">
+                <div className="space-y-6">
+                    <h3 className="text-xl font-bold text-blue-600">Por que converter HEIC para JPG?</h3>
+                    <p className="text-slate-600 leading-relaxed text-sm">
+                        O formato <strong>HEIC (High Efficiency Image Coding)</strong> foi adotado pela Apple a partir do iOS 11. Ele é excelente para economizar espaço no seu iPhone, chegando a ocupar metade do tamanho de um JPG comum sem perder qualidade.
+                    </p>
+                    <p className="text-slate-600 leading-relaxed text-sm">
+                        No entanto, o grande problema é a <strong>compatibilidade</strong>. Softwares de edição antigos, sistemas Windows anteriores ao 10 e muitos sites de envio de documentos ainda não aceitam o formato .heic. Converter para JPG garante que sua foto abra em qualquer lugar.
+                    </p>
+                </div>
+
+                <div className="bg-blue-50 p-8 rounded-3xl border border-blue-100">
+                    <h3 className="text-xl font-bold text-slate-800 mb-4">Dicas de Uso</h3>
+                    <ul className="space-y-4">
+                        <li className="flex gap-3 text-sm text-slate-700">
+                            <CheckCircle2 className="text-blue-500 shrink-0" size={18} />
+                            <span><strong>Envio de Documentos:</strong> Muitos portais do governo e bancos aceitam apenas JPG ou PDF.</span>
+                        </li>
+                        <li className="flex gap-3 text-sm text-slate-700">
+                            <CheckCircle2 className="text-blue-500 shrink-0" size={18} />
+                            <span><strong>Redes Sociais:</strong> Embora Instagram aceite HEIC, postar via Desktop as vezes exige o formato JPG.</span>
+                        </li>
+                        <li className="flex gap-3 text-sm text-slate-700">
+                            <CheckCircle2 className="text-blue-500 shrink-0" size={18} />
+                            <span><strong>Impressão:</strong> Gráficas e totens de revelação de fotos costumam ler apenas o padrão JPEG.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr className="my-12 border-slate-100" />
+
+            {/* Seção Técnica Complementar - Coloque logo após suas Dicas de Uso */}
+<div className="mt-16 space-y-12">
+    
+    {/* Tabela Comparativa (Fator de Ranking no Google) */}
+    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 text-center">
+            <h3 className="font-bold text-slate-800">HEIC vs JPG: Qual a diferença real?</h3>
+        </div>
+        <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+                <thead>
+                    <tr className="bg-slate-50/30">
+                        <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider text-slate-500 border-b border-slate-100">Característica</th>
+                        <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider text-blue-600 border-b border-slate-100 text-center">HEIC (Novo)</th>
+                        <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider text-slate-500 border-b border-slate-100 text-center">JPG (Clássico)</th>
+                    </tr>
+                </thead>
+                <tbody className="text-sm font-normal">
+                    <tr className="hover:bg-slate-50/50 transition-colors">
+                        <td className="px-6 py-4 border-b border-slate-100 text-slate-700 font-medium">Compressão</td>
+                        <td className="px-6 py-4 border-b border-slate-100 text-center text-green-600">Alta (Menor arquivo)</td>
+                        <td className="px-6 py-4 border-b border-slate-100 text-center text-slate-500">Média</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50/50 transition-colors">
+                        <td className="px-6 py-4 border-b border-slate-100 text-slate-700 font-medium">Cores (Deep Color)</td>
+                        <td className="px-6 py-4 border-b border-slate-100 text-center text-slate-600 font-semibold">16 bits</td>
+                        <td className="px-6 py-4 border-b border-slate-100 text-center text-slate-500">8 bits</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50/50 transition-colors">
+                        <td className="px-6 py-4 border-b border-slate-100 text-slate-700 font-medium">Compatibilidade</td>
+                        <td className="px-6 py-4 border-b border-slate-100 text-center text-red-500">Restrita a Apple</td>
+                        <td className="px-6 py-4 border-b border-slate-100 text-center text-green-600 font-semibold">Universal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<hr className="my-12 border-slate-100" />
+
+            <div className="space-y-8">
+                <h3 className="text-2xl font-bold text-slate-900">Como abrir arquivos HEIC no Windows?</h3>
+                <p className="text-slate-600 leading-relaxed font-normal">
+                    Se você não quer converter todas as suas fotos, o Windows 10 e 11 permitem baixar uma extensão chamada <strong>"Extensões de Vídeo HEVC"</strong> na Microsoft Store. Porém, ela é paga em alguns casos. Nosso conversor <strong>HEICtoJPG Rocktools</strong> surge como uma alternativa gratuita e sem instalação para resolver isso instantaneamente.
+                </p>
+                
+                <div className="grid sm:grid-cols-3 gap-6 mt-8">
+                    <div className="p-4 border border-slate-100 rounded-xl hover:shadow-md transition">
+                        <h4 className="font-bold text-slate-800 mb-2">Qualidade</h4>
+                        <p className="text-sm text-slate-500 font-normal">Mantemos os metadados (EXIF) da foto original, como data e local.</p>
+                    </div>
+                    <div className="p-4 border border-slate-100 rounded-xl hover:shadow-md transition">
+                        <h4 className="font-bold text-slate-800 mb-2">Privacidade</h4>
+                        <p className="text-sm text-slate-500 font-normal">As fotos são processadas e deletadas. Sua privacidade é nossa prioridade.</p>
+                    </div>
+                    <div className="p-4 border border-slate-100 rounded-xl hover:shadow-md transition">
+                        <h4 className="font-bold text-slate-800 mb-2">Velocidade</h4>
+                        <p className="text-sm text-slate-500 font-normal">Conversão em massa de até 5 arquivos simultâneos </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
             </main>
 
             <footer className="bg-slate-900 text-slate-400 py-12 px-4">
